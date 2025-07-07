@@ -59,7 +59,45 @@ graph/chains/               # LangChain Runnables and chains
 ├── answer_grader.py        # Grades if answer addresses question  
 ├── hallucination_grader.py # Checks grounding in context  
 ├── router.py               # Classifies query source (web vs vector)  
-├── tests/test_chains.py    # Unit tests for grading logic  
+├── tests/test_chains.py    # Unit tests for grading logic    
 
 
+## 🧰 Tech Stack
 
+- [LangGraph](https://github.com/langchain-ai/langgraph)
+- [LangChain](https://www.langchain.com/)
+- [ChatGroq](https://www.groq.com/)
+- Python 3.10+
+- ChromaDB
+- python-dotenv
+- Pytest
+
+---
+
+## ⚙️ Setup & Installation
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/kedarhardikar/Adaptive-Corrective-Self-RAG.git
+cd Adaptive-Corrective-Self-RAG
+```
+### Create and activate Virtual environment  
+```bash
+python -m venv .venv
+source .venv/bin/activate       # On Windows: .venv\Scripts\activate
+pip install -r requirements.txt
+```
+
+### Create a .env file  
+```bash
+GROQ_API_KEY=your-groq-key
+
+# Optional LangSmith tracing
+LANGSMITH_TRACING=true
+LANGSMITH_ENDPOINT=https://api.smith.langchain.com
+LANGSMITH_API_KEY=your-langsmith-key
+
+# Optional Tavily search
+TAVILY_API_KEY=your-tavily-key
+```
+ 
