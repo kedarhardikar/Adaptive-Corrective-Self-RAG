@@ -81,14 +81,14 @@ graph/chains/               # LangChain Runnables and chains
 git clone https://github.com/kedarhardikar/Adaptive-Corrective-Self-RAG.git
 cd Adaptive-Corrective-Self-RAG
 ```
-### Create and activate Virtual environment  
+### 2. Create and activate Virtual environment  
 ```bash
 python -m venv .venv
 source .venv/bin/activate       # On Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-### Create a .env file  
+### 3. Create a .env file  
 ```bash
 GROQ_API_KEY=your-groq-key
 
@@ -101,3 +101,17 @@ LANGSMITH_API_KEY=your-langsmith-key
 TAVILY_API_KEY=your-tavily-key
 ```
  
+### 4. Ingest Documents
+```bash
+python ingestion.py
+```
+
+### 5. Run the agent
+```bash
+python main.py
+```
+
+## Prompting Strategy  
+Uses RAG prompt from LangChain Hub: rlm/rag-prompt  
+Uses .with_structured_output() for binary grading chains (True/False logic)  
+Chain outputs are deterministic (temperature=0)  
