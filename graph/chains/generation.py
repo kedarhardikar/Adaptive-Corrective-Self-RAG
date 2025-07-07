@@ -10,7 +10,7 @@ load_result = load_dotenv(dotenv_path)
 print("Loaded .env?", load_result)
 
 groq_api_key = os.getenv("GROQ_API_KEY")
-print("GROQ API KEY:", repr(groq_api_key))
+# print("GROQ API KEY:", repr(groq_api_key))
 
 if groq_api_key is None:
     raise RuntimeError("GROQ_API_KEY not found in environment!")
