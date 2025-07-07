@@ -91,7 +91,7 @@ cd Adaptive-Corrective-Self-RAG
    python run main.py
 
 
-✍️ Prompting Strategy
-Uses RAG prompt from LangChain Hub: rlm/rag-prompt
-Uses with_structured_output() for grading chains (true/false logic)
-Chain outputs are deterministic (temperature=0)
+✍️ Prompting Strategy  
+Uses RAG prompt from LangChain Hub: rlm/rag-prompt  
+Uses with_structured_output() for grading chains (true/false logic)  
+Chain outputs are deterministic (temperature=0)  
