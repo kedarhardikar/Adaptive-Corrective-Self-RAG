@@ -1,0 +1,14 @@
+beautifulsoup4
+langchain
+langgraph
+langchainhub
+langchain-community
+langchain-groq
+python-dotenv
+tavily-python
+chromadb
+pytest
+sentence-transformers
+langchain-tavily
+langchain-chroma
+langchain-huggingface
