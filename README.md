@@ -20,47 +20,47 @@ Answer usefulness
 
 🧪 Unit Tested grading logic with pytest
 
-🧠 Architecture
-graph TD;
-    Start --> Router
-    Router -->|vectorstore| Retrieve
-    Router -->|websearch| WebSearch
-    Retrieve --> GradeDocs
-    GradeDocs -->|relevant| Generate
-    GradeDocs -->|not relevant| WebSearch
-    WebSearch --> Generate
-    Generate --> GradeAnswer
-    GradeAnswer -->|useful| End
-    GradeAnswer -->|not useful| WebSearch
-    GradeAnswer -->|hallucinated| Generate
+🧠 Architecture  
+graph TD;  
+    Start --> Router  
+    Router -->|vectorstore| Retrieve  
+    Router -->|websearch| WebSearch  
+    Retrieve --> GradeDocs  
+    GradeDocs -->|relevant| Generate  
+    GradeDocs -->|not relevant| WebSearch  
+    WebSearch --> Generate  
+    Generate --> GradeAnswer  
+    GradeAnswer -->|useful| End  
+    GradeAnswer -->|not useful| WebSearch  
+    GradeAnswer -->|hallucinated| Generate  
 
-📁 Project Structure
-Advanced_RAG/
-├── main.py                      # Entry point to run the workflow
-├── ingestion.py                 # Vector DB creation & retriever object
-├── .env                         # API keys (GROQ_API_KEY)
-├── .gitignore                   # Ignores .env, __pycache__, etc.
+📁 Project Structure  
+Advanced_RAG/   
+├── main.py                      # Entry point to run the workflow  
+├── ingestion.py                 # Vector DB creation & retriever object  
+├── .env                         # API keys (GROQ_API_KEY)  
+├── .gitignore                   # Ignores .env, __pycache__, etc.  
+  
+graph/  
+├── graph1.py                    # Builds and compiles LangGraph workflow  
+├── consts.py                    # Constants like RETRIEVE, GENERATE  
+├── state.py                     # Defines the GraphState TypedDict  
+  
+graph/nodes/                     # LangGraph nodes  
+├── retrieve.py                  # Retrieves documents from vector store  
+├── generate.py                  # Generates answer using LLM  
+├── grader.py                    # Grades doc relevance  
+├── web_search.py                # Tool for external search  
+  
+graph/chains/                    # LangChain Runnables and chains  
+├── generation.py                # Prompt + LLM + parser  
+├── answer_grader.py             # Grades if answer addresses question  
+├── hallucination_grader.py      # Checks grounding in context  
+├── router.py                    # Classifies query source (web vs vector)  
+├── tests/test_chains.py         # Unit tests for grading logic  
 
-graph/
-├── graph1.py                    # Builds and compiles LangGraph workflow
-├── consts.py                    # Constants like RETRIEVE, GENERATE
-├── state.py                     # Defines the GraphState TypedDict
 
-graph/nodes/                     # LangGraph nodes
-├── retrieve.py                  # Retrieves documents from vector store
-├── generate.py                  # Generates answer using LLM
-├── grader.py                    # Grades doc relevance
-├── web_search.py                # Tool for external search
-
-graph/chains/                    # LangChain Runnables and chains
-├── generation.py                # Prompt + LLM + parser
-├── answer_grader.py             # Grades if answer addresses question
-├── hallucination_grader.py      # Checks grounding in context
-├── router.py                    # Classifies query source (web vs vector)
-├── tests/test_chains.py         # Unit tests for grading logic
-
-
-🧰 Tech Stack
+🧰 Tech Stack  
 LangGraph
 LangChain
 ChatGroq
@@ -71,8 +71,8 @@ Pytest
 
 ⚙️ Setup & Installation
 
-1. Clone the repo
-git clone https://github.com/kedarhardikar/Adaptive-Corrective-Self-RAG.git
+1. Clone the repo  
+git clone https://github.com/kedarhardikar/Adaptive-Corrective-Self-RAG.git  
 cd Adaptive-Corrective-Self-RAG
 
 2. Create and activate virtual env
